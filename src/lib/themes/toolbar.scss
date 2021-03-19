@@ -1,0 +1,125 @@
+.xmark-editor .toolbar, .modal .toolbar {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #d9d9d9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    z-index: 200;
+
+    .toolbar-group {
+        height: 20px;
+        width: 1px;
+        border-left: 1px solid #d9d9d9;
+        margin: -6px 0 -6px 3px;
+    }
+    .tool-button {
+        cursor: pointer;
+        color: $tool-text-color;
+        border-radius: 3px;
+        padding: 2px 6px;
+        line-height: 20px;
+
+        &:hover {
+            background-color: $tool-hover-bgcolor;
+        }
+        &.disabled {
+            color: $tool-disabled-text-color;
+            background-color: transparent !important;
+        }
+        &:active {
+            background-color: $tool-down-bgcolor;
+        }
+        .label {
+            margin: 0 3px;
+        }
+    }
+
+    .tool-button-active {
+        background-color: $tool-down-bgcolor;
+
+        &:hover {
+            background-color: $tool-down-bgcolor;
+        }
+    }
+
+    //下拉按钮
+    .tool-button-dropdown {
+        border-radius: 4px;
+        margin-left: 3px;
+
+        &:hover {
+            background-color: $tool-hover-bgcolor !important;
+        }
+        &.disabled:hover {
+            background-color: transparent !important;
+        }
+
+        &>.ant-btn:first-child {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+        }
+
+        .max-dropdown-height {
+            overflow: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .ant-btn {
+            border-color: transparent !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            font-size: 12px;
+
+            &:hover {
+                color: $tool-text-color !important;
+                background-color: $tool-down-bgcolor !important;
+            }
+        }
+        &.disabled .ant-btn:hover {
+            color: rgba(0, 0, 0, 0.25) !important;
+            background-color: transparent !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 3px;
+            margin-bottom: 3px;
+            margin-right: 20px;
+        }
+
+        .menu-icon {
+            font-size: 16px;
+        }
+
+        .ant-dropdown-menu-item {
+            padding: 3px 15px;
+            font-size: 12px;
+        }
+
+        .ant-dropdown-trigger {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            border-radius: 0 4px 4px 0;
+
+            .anticon {
+                font-size: 11px;
+            }
+        }
+    }
+
+    .color-line {
+        height: 2px;
+        margin-top: -5px;
+        margin-bottom: 1px;
+    }
+
+}
+
+.tool-icon {
+    font-size: 16px;
+    line-height: 16px;
+    vertical-align: text-bottom;
+}

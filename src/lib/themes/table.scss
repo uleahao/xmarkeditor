@@ -1,0 +1,229 @@
+.xmark-editor {
+    .xmark-table {
+        position: relative;
+        overflow: visible;
+        margin-top: 3px;
+
+        &.editing {
+            padding-left: 20px;
+            margin-left: -20px;
+            margin-top: -22px;
+            padding-top: 22px;
+        }
+
+        .xmark-table-wrapper {
+            position: relative;
+            z-index: 100;            
+            overflow: visible;
+            padding-bottom: 22px;
+
+            &.editing {
+                margin-top: -22px;
+                padding-top: 22px;
+                margin-left: -4px;
+                padding-left: 4px;
+            }
+
+            table {
+                table-layout: fixed;
+                border-collapse: collapse;
+                border-spacing: 0;
+                word-wrap: break-word;
+                word-break: normal;
+                margin: 0;
+                font-weight: 400;
+                box-sizing: border-box;
+                border: 1px solid #d9d9d9;
+                background-color: white;
+
+                td {
+                    border: 1px solid #d9d9d9;
+                    padding: 5px;
+                    word-wrap: break-word;
+
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .xmark-table-cols-header {
+                position: absolute;
+                top: 2px;
+                height: 20px;
+                border-radius: 2px;
+                display: flex;
+                cursor: default;
+                user-select: none; //控制器必须禁止选择，否则编辑器会出错
+
+                .cols-header-item {
+                    position: relative;
+                    height: 17px;
+                    display: inline-block;
+                    background-color: #fcfcfc;
+                    border: 1px solid #d9d9d9;
+                    border-right: 0;
+
+                    &:first-child {
+                        border-top-left-radius: 2px;
+                        border-bottom-left-radius: 2px;
+                    }
+
+                    &:last-child {
+                        border-top-right-radius: 2px;
+                        border-bottom-right-radius: 2px;
+                        border: 1px solid #d9d9d9;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #f0f0f0;
+                    }
+
+                    &.hilighted {
+                        background-color: #edf7ff;
+                    }
+
+                    &.selected {
+                        background-color: #4daaff;
+                        border: 1px solid #008dff;
+                        cursor: default;
+                    }
+                }
+
+                .resize-handle {
+                    position: absolute;
+                    width: 8px;
+                    height: 17px;
+                    opacity: 0.75;
+                    z-index: 1;
+
+                    &:hover {
+                        background-color: #2796ef;
+                    }
+                }
+
+                .resize-handle-e {
+                    top: -1px;
+                    cursor: ew-resize;
+                    right: -4px;
+                }
+
+                .cols-add {
+                    font-size: 13px;
+                    color: #8e8e8e;
+                    width: 20px;
+                    text-align: center;
+
+                    i {
+                        vertical-align: 0px;
+                    }
+
+                    &:active {
+                        background-color: #e0e0e0;
+                    }
+                }
+            }
+        }
+
+        .xmark-table-controler {
+            position: absolute;
+            left: 0;
+            top: 0;
+            user-select: none; //控制器必须禁止选择，否则编辑器会出错
+
+            .card-toolbar {
+                margin-left: 20px;
+            }
+
+            .xmark-table-rows-header {
+                width: 18px;
+                margin-top: 22px;
+                cursor: default;
+
+                .rows-header-item {
+                    position: relative;
+                    width: 16px;
+                    border: 1px solid #d9d9d9;
+                    border-bottom: 0;
+                    background-color: #fcfcfc;
+
+                    &:first-child {
+                        border-top-left-radius: 2px;
+                        border-top-right-radius: 2px;
+                    }
+
+                    &:last-child {
+                        border-bottom-left-radius: 2px;
+                        border-bottom-right-radius: 2px;
+                        border: 1px solid #d9d9d9;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #f0f0f0;
+                    }
+
+                    &.hilighted {
+                        background-color: #edf7ff;
+                    }
+
+                    &.selected {
+                        background-color: #4daaff;
+                        border: 1px solid #008dff;
+                        cursor: default;
+                    }
+                }
+
+                .resize-handle {
+                    position: absolute;
+                    width: 16px;
+                    height: 8px;
+                    opacity: 0.75;
+                    z-index: 1;
+
+                    &:hover {
+                        background-color: #2796ef;
+                    }
+                }
+
+                .resize-handle-s {
+                    left: -1px;
+                    cursor: ns-resize;
+                    bottom: -4px;
+                }
+
+                .rows-add {
+                    font-size: 13px;
+                    color: #8e8e8e;
+                    height: 20px;
+                    text-align: center;
+
+                    &:active {
+                        background-color: #e0e0e0;
+                    }
+                }
+            }
+        }
+
+        .cell-selector {
+            position: relative;
+            user-select: none; //控制器必须禁止选择，否则编辑器会出错
+
+            .cell-selector-border {
+                position: absolute;
+                border: 1px solid #0589f3;
+            }
+
+            .cell-selector-trigger {
+                width: 8px;
+                height: 8px;
+                border-radius: 11px;
+                position: absolute;
+                background-color: #0589f3;
+                border: 1px solid white;
+                cursor: nwse-resize;
+            }
+        }
+    }
+}

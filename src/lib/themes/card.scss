@@ -1,0 +1,86 @@
+.xmark-editor {
+    .card {
+        position: relative;
+        user-select: none;
+        
+        &.card-focused {
+            box-shadow: 0 0 2px 1px #e8e8e8;
+            border-radius: 3px;
+        }
+
+        .resize-handle {
+            position: absolute;
+            width: 50px;
+            height: 8px;
+            background-color: #1153aa;
+            opacity: 0.75;
+            border-radius: 4px;
+            z-index: 100;
+        }
+
+        .resize-handle-s {
+            left: 50%;
+            margin-left: -25px;
+            cursor: ns-resize;
+            bottom: -4px;
+        }
+    }
+
+    .card-toolbar {
+        visibility: hidden;
+        background-color: #fff;
+        margin-top: -36px;
+        position: absolute;
+        padding: 3px 3px 3px 0;
+        margin-left: 0px;
+        border: 1px solid #d8d8d8;
+        box-shadow: 0px 4px 8px 0px rgba(134, 134, 134, 0.5);
+        border-radius: 3px;
+        white-space: nowrap;
+        z-index: 100;
+
+        &.card-toolbar-focused {
+            visibility: visible;
+        }
+
+        .tool-button {
+            cursor: pointer;
+            color: $tool-text-color;
+            border-radius: 3px;
+            padding: 2px 4px;
+            margin-left: 3px;
+            line-height: 20px;
+
+            &:hover {
+                background-color: $tool-hover-bgcolor;
+            }
+
+            &:active {
+                background-color: $tool-down-bgcolor;
+            }
+
+            &.disabled {
+                color: $tool-disabled-text-color;
+                background-color: transparent !important;
+            }
+        }
+
+        .tool-button-active {
+            background-color: $tool-down-bgcolor;
+
+            &:hover {
+                background-color: $tool-down-bgcolor;
+            }
+        }
+        .toolbar-group {
+            height: 18px;
+            width: 1px;
+            border-left: 1px solid #d9d9d9;
+            margin: -4px 0 -4px 3px;
+
+            &:first-child {
+                display: none;
+            }
+        }
+    }    
+}

@@ -1,0 +1,15 @@
+
+.xmark-editor {
+    .task-list {
+        padding-inline-start: 18px;
+
+        li {
+            list-style: none;
+    
+            .check-wrapper {
+                margin-right: 5px;
+                user-select: none;
+            }
+        }
+    }
+}

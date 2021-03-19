@@ -1,0 +1,64 @@
+.xmark-editor {
+    .image-container {
+        height: 100%;
+        text-align: center;
+        user-select: none;
+
+        .image {
+            height: 100%;
+        }
+
+        .swiper-container {
+            height: 100%;
+
+            .slide-content {
+                height: 100%;
+                text-align: center;
+            }
+            .swiper-img {
+                height: 100%;
+            }
+        }
+
+    }
+}
+
+.image-card-modal {
+    .index-image-nav-label {
+        line-height: 64px;
+    }
+    .index-image-nav {
+        white-space: nowrap;
+        
+        .ant-pagination-item {
+            width: 64px;
+            height: 64px;
+            overflow: hidden;
+            padding: 2px;
+
+            .index-image {
+                width: 100%;
+            }
+        }
+        .ant-pagination-item-active {
+            box-shadow: 0 0 4px #1890ff;
+        }
+    }
+    .toolbar {
+        background-color: transparent;
+        box-shadow: none;
+        border-bottom: none;
+    }
+    .file-uploader {
+        padding: 0;
+
+        .file-container > p {
+            display: none;
+        }
+        .choose-file-button {
+            padding: 3px 12px;
+            margin: 0;
+        }
+    }
+}
+

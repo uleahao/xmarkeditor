@@ -1,0 +1,44 @@
+@import '~codemirror/lib/codemirror.css';
+
+
+.xmark-editor {
+
+    .CodeMirror {
+        height: auto;
+        border-radius: 3px 3px 0 3px;
+        border: 1px solid #d8d8d8;
+        font-size: 13px;
+    }
+    .code-footer {
+        text-align: right;
+
+        .code-toolbar {
+            display: inline-block;
+            margin: 0;
+            border: 1px solid #d8d8d8;
+            border-radius: 0 0 3px 3px;
+            border-top: 0;
+            visibility: visible;
+            position: inherit;
+            box-shadow: none;
+
+            .max-dropdown-height {
+                overflow: auto;
+                border-radius: 4px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        .code-lang {
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+            border: 1px solid #d8d8d8;
+            border-radius: 0 0 3px 3px;
+            border-top: 0;
+            padding: 3px;
+            font-size: 13px;
+            margin-bottom: 5.5px;
+        }
+    }
+}

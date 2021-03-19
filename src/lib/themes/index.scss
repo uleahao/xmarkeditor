@@ -1,0 +1,295 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    border-radius: 3px;
+}
+
+html,
+input,
+textarea {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    background: #eee;
+}
+
+body {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+pre {
+    padding: 10px;
+    background-color: #eee;
+    white-space: pre-wrap;
+}
+
+:not(pre)>code {
+    font-family: monospace;
+    background-color: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 3px;
+}
+
+blockquote {
+    border-left: 2px solid #ddd;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 10px;
+    color: #aaa;
+    font-style: italic;
+}
+
+blockquote[dir='rtl'] {
+    border-left: none;
+    padding-left: 0;
+    padding-right: 10px;
+    border-right: 2px solid #ddd;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    border: 2px solid #ddd;
+}
+
+input {
+    box-sizing: border-box;
+    font-size: 0.85em;
+    width: 100%;
+    padding: 0.5em;
+    border: 2px solid #ddd;
+    background: #fafafa;
+}
+
+input:focus {
+    outline: 0;
+    border-color: blue;
+}
+
+// [data-slate-editor]>*+* {
+//     margin-top: 10px;
+// }
+
+.react-viewer-icon {
+    line-height: unset !important;
+}
+.react-viewer-image {
+    background-color: white;
+}
+
+$tool-text-color: #555;
+$tool-hover-bgcolor: #eee;
+$tool-down-bgcolor: #ddd;
+$tool-disabled-text-color: #ddd;
+$paper-width: 872px;
+
+.xmark-editor {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    text-align: left;
+
+    .content-wrapper {
+        width: 100%;
+        height: calc(100% - 36px);
+        overflow: auto;
+        background-color: #f9f9f9;
+        
+        .content {
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 2px 8px rgba(115, 115, 115, 0.08);
+
+            position: relative;
+            margin: 10px auto 30px;
+            background: #ffffff;
+            width: $paper-width;
+            font-family: 'Tahoma For Number', 'Chinese Quote', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #262626;
+            cursor: text;
+            white-space: normal;
+
+            .content-extra {
+                padding: 48px 60px 0 60px;
+
+                .title {
+                    padding-bottom: 16px;
+                    border-bottom: 1px solid #e8e8e8;
+
+                    .title-input {
+                        position: relative;
+                        outline: none;
+                        border: none;
+                        box-shadow: none;
+                        width: 100%;
+                        padding: 0;
+                        background-color: transparent;
+
+                        line-height: 50px;
+                        color: #262626;
+                        font-weight: 700;
+                        font-size: 36px;
+                    }
+                }
+            }
+
+            .editor-core {
+                padding: 20px 60px 90px 60px;
+                min-height: 1024px;
+
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    margin-top: 3px;
+                    margin-bottom: 3px;
+                    margin-right: 20px;
+                }
+                p {
+                    margin-bottom: 0.3em;
+                }
+
+                .h-line {
+                    padding: 8px 0;
+                    
+                    &.focused {
+                        background-color: #f8f8f8;
+                        border-radius: 3px;
+                    }
+                    hr {
+                        margin: 8px 0;
+                        border: 0;
+                        border-bottom: 1px solid #d8d8d8;
+                    }
+                }
+                a {
+                    cursor: text;
+                    text-decoration: underline;
+                }
+
+                //在Slate Element中的控制器必须禁止选择，否则编辑器会出错
+                .controller {
+                    user-select: none;
+                }
+
+                .heading-controller {
+                    position: absolute;
+                    margin-left: -32px;
+                    color: #aaa;
+                    cursor: pointer;
+
+                    .head-button {
+                        padding: 3px 3px;
+                        border-radius: 3px;
+                        line-height: 20px;
+    
+                        &:hover {
+                            background-color: $tool-hover-bgcolor;
+                        }
+                        &:active {
+                            background-color: $tool-down-bgcolor;
+                        }
+                    }
+                    .level {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        .content-right {
+            position: absolute;
+            top: 36px;
+            right: 0;
+            height: calc(100% - 36px);
+            width: calc(50% - 436px);
+        }
+    }
+
+    h6 {
+        font-size: 14px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
+
+.drawio-frame {
+    background-color: #808080d9;
+    z-index: 1000;
+}
+.drawio-tools {
+    position: fixed;
+    top: 0;
+    right: 50%;
+    font-size: 14px;
+    background-color: #808080d9;
+    padding: 2px 10px;
+    color: white;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    z-index: 1500;
+
+    .tool {
+        cursor: pointer;
+        color: white;
+        border-radius: 3px;
+        padding: 2px 6px;
+        line-height: 20px;
+
+        &:hover {
+            color: #333;
+            background-color: #eee;
+        }
+        &:active {
+            background-color: #ddd;
+        }
+    }
+
+}
+
+.small-form {
+    .ant-form-item {
+        margin-bottom: 3px;
+    }
+}
+@import 'table.scss';
+@import 'toolbar.scss';
+@import 'card.scss';
+@import 'outline.scss';
+@import 'code.scss';
+@import 'list.scss';
+@import 'image.scss';
+@import 'draw.scss';
+
+@import './iconfont/iconfont.css'
